@@ -3,7 +3,7 @@
 Created on Mon Mar 18 10:32:48 2024
 
 Авто добавление новых клиентов и sku из РКУ в бд
->>>>>>>>Ваня, не забывай менять начальную дату ввода новинки!!!!!<<<<<<<<
+>>>>>>>>Не забывай менять начальную дату ввода новинки!!!!!<<<<<<<<
 @author: kostin ivan
 """
 import pandas as pd
@@ -34,7 +34,7 @@ def func_for_find_difference(query, column, df_exl, type_x, flag = True):
     return sp
  
 #Переменные
-path_to_rku_excel = r'\\fs1v-msk01\Для всех\Третьякова М\Pricing\Рита\РКУ\РКУ 2024.xlsx'
+path_to_rku_excel = r'\\***\Для всех\***\Pricing\***\РКУ\РКУ 2024.xlsx'
 sp_columns = ['Код SKU', 'Код сегмента', 'Бренд', 'BI название ДТ', 'Дивизион', 'Название сегмента', 'Название SKU', 
               'Емкость', 'Срок с', 'Срок по', 'Цена', 'скидка за непринятие', 'скидка для торгового дома', 
               'Partnership discount MT текущий', 'Trade Marketing discount conditional(incl CLAP) текущий', 
@@ -46,7 +46,7 @@ now = datetime.datetime.now()
 
 #Подключение к бд/загрузка файла
 conn = pyodbc.connect(driver='{SQL Server}',
-                      server="server219", 
+                      server="***", 
                       database="FinanceAndSAP",               
                       trusted_connection="yes")
 cur = conn.cursor()
@@ -83,95 +83,95 @@ one_top_client = random.choice(func_for_find_difference(query_example_dt, 'Ко�
 print(f'{diff_sku} нет в бд' if len(diff_sku)>0 else 'SKU актуализированы')
 print(f'{diff_client} нет в бд' if len(diff_client)>0 else 'Клиенты актуализированы')
 
-# for i in diff_client:
-#     df_exl_filtred = df_exl[df_exl['Код_сегмента'] == i].iloc[:1]
-#     res = dict(*(df_exl_filtred[['Код_сегмента', 'Дивизион', 'BI_NameDT', 'SegmentName', 'Бренд']].groupby("Код_сегмента").apply(lambda x: x.drop(columns="Код_сегмента").to_dict("records")).to_dict()).get(i))     #Датафрейм из эксель файла фильтранул по столбцам и коду сегмента преобразовал в словарь
-#     cur.execute(f""" INSERT INTO [FinanceAndSAP].[segment].[Agreements]
-#                             SELECT [ProcID]
-#                                   ,[SKU_ID]
-#                                   ,[SKU]
-#                                   ,[SegmentCode] = '{i}'
-#                                   ,[BrandID]
-#                                   ,[Brand] = '{res.get('Бренд')}'
-#                                   ,[BI_NameDT] = '{res.get('BI_NameDT')}'
-#                                   ,[DivisionID] = '{0}'
-#                                   ,[Division] = '{res.get('Дивизион')}'
-#                                   ,[SegmentName] = '{res.get('SegmentName')}'
-#                                   ,[Vol]
-#                                   ,[FromDate]
-#                                   ,[TillDate]
-#                                   ,[GS]
-#                                   ,[PIAD]
-#                                   ,[TH]
-#                                   ,[PD]
-#                                   ,[TMD]
-#                                   ,[LD]
-#                                   ,[EDLP]
-#                                   ,[Reb]
-#                                   ,[PriceNoVAT]
-#                                   ,[Price]
-#                                   ,[Pickup]
-#                                   ,[Prepay]
-#                                   ,[PriceNoPickupAndPrepay]
-#                                   ,[MOC]
-#                                   ,[StandartDT]
-#                                   ,[StandartTT]
-#                                   ,[StandartMT]
-#                                   ,[StandartOT]
-#                                   ,[StandartOT_TT]
-#                                   ,[StandartExtraDT]
-#                                   ,[StandartRB]
-#                                   ,[StandartEntryRB]
-#                                   ,[StandartExtraDT_RB]
-#                                   ,[IndividDT]
-#                                   ,[IndividTT]
-#                                   ,[IndividMT]
-#                                   ,[IndividOT]
-#                                   ,[IndividOT_TT]
-#                                   ,[IndividExtraDT]
-#                                   ,[IndividRB]
-#                                   ,[IndividEntryRB]
-#                                   ,[IndividExtraDT_RB]
-#                                   ,[Dal]
-#                                   ,[SellinBaseGrossSales]
-#                                   ,[SellinGrossSales]
-#                                   ,[InclRebate]
-#                                   ,[InclGuaranteedYield]
-#                                   ,[InclPartnershipDiscount]
-#                                   ,[InclPrepaymentDiscount]
-#                                   ,[InclPickUpDiscount]
-#                                   ,[InclPartnershipDiscountTT]
-#                                   ,[InclListingDiscount]
-#                                   ,[inclMotivationDiscountSPSR]
-#                                   ,[InclMerchandising]
-#                                   ,[InclDiscountPromotion]
-#                                   ,[Excise]
-#                                   ,[NetSales]
-#                                   ,[TotalMaterialCosts]
-#                                   ,[OtherProduction]
-#                                   ,[WarehousingCosts]
-#                                   ,[FixClientsLogistic]
-#                                   ,[TotalSupplyIndirectCosts]
-#                                   ,[BrandMarketing]
-#                                   ,[InclVariableProduction]
-#                                   ,[VariableIntercompanyLogistics]
-#                                   ,[VariableClientLogistic]
-#                                   ,[Contribution0]
-#                                   ,[Contribution1]
-#                                   ,[PlanVersion]
-#                                   ,[DescriptionTT]
-#                                   ,[DescriptionMT]
-#                                   ,[DescriptionOT]
-#                                   ,[AttrPrice]
-#                                   ,[AttrCS]
-#                                   ,[DM] = 'text'
-#                                   ,[TM] = 'text'
-#                                   ,[ClientService] = 'text'
-#                                   ,[OPK] = 'text'
-#                                   ,[isDeleted]
-#                                   ,[isFromDB]
-#                             FROM [FinanceAndSAP].[segment].[Agreements]
-#                             WHERE TillDate = '2024-12-31 00:00:00.000' and SegmentCode = '{one_top_client}' """)
+for i in diff_client:
+    df_exl_filtred = df_exl[df_exl['Код_сегмента'] == i].iloc[:1]
+    res = dict(*(df_exl_filtred[['Код_сегмента', 'Дивизион', 'BI_NameDT', 'SegmentName', 'Бренд']].groupby("Код_сегмента").apply(lambda x: x.drop(columns="Код_сегмента").to_dict("records")).to_dict()).get(i))     #Датафрейм из эксель файла фильтранул по столбцам и коду сегмента преобразовал в словарь
+    cur.execute(f""" INSERT INTO [FinanceAndSAP].[segment].[Agreements]
+                            SELECT [ProcID]
+                                  ,[SKU_ID]
+                                  ,[SKU]
+                                  ,[SegmentCode] = '{i}'
+                                  ,[BrandID]
+                                  ,[Brand] = '{res.get('Бренд')}'
+                                  ,[BI_NameDT] = '{res.get('BI_NameDT')}'
+                                  ,[DivisionID] = '{0}'
+                                  ,[Division] = '{res.get('Дивизион')}'
+                                  ,[SegmentName] = '{res.get('SegmentName')}'
+                                  ,[Vol]
+                                  ,[FromDate]
+                                  ,[TillDate]
+                                  ,[GS]
+                                  ,[PIAD]
+                                  ,[TH]
+                                  ,[PD]
+                                  ,[TMD]
+                                  ,[LD]
+                                  ,[EDLP]
+                                  ,[Reb]
+                                  ,[PriceNoVAT]
+                                  ,[Price]
+                                  ,[Pickup]
+                                  ,[Prepay]
+                                  ,[PriceNoPickupAndPrepay]
+                                  ,[MOC]
+                                  ,[StandartDT]
+                                  ,[StandartTT]
+                                  ,[StandartMT]
+                                  ,[StandartOT]
+                                  ,[StandartOT_TT]
+                                  ,[StandartExtraDT]
+                                  ,[StandartRB]
+                                  ,[StandartEntryRB]
+                                  ,[StandartExtraDT_RB]
+                                  ,[IndividDT]
+                                  ,[IndividTT]
+                                  ,[IndividMT]
+                                  ,[IndividOT]
+                                  ,[IndividOT_TT]
+                                  ,[IndividExtraDT]
+                                  ,[IndividRB]
+                                  ,[IndividEntryRB]
+                                  ,[IndividExtraDT_RB]
+                                  ,[Dal]
+                                  ,[SellinBaseGrossSales]
+                                  ,[SellinGrossSales]
+                                  ,[InclRebate]
+                                  ,[InclGuaranteedYield]
+                                  ,[InclPartnershipDiscount]
+                                  ,[InclPrepaymentDiscount]
+                                  ,[InclPickUpDiscount]
+                                  ,[InclPartnershipDiscountTT]
+                                  ,[InclListingDiscount]
+                                  ,[inclMotivationDiscountSPSR]
+                                  ,[InclMerchandising]
+                                  ,[InclDiscountPromotion]
+                                  ,[Excise]
+                                  ,[NetSales]
+                                  ,[TotalMaterialCosts]
+                                  ,[OtherProduction]
+                                  ,[WarehousingCosts]
+                                  ,[FixClientsLogistic]
+                                  ,[TotalSupplyIndirectCosts]
+                                  ,[BrandMarketing]
+                                  ,[InclVariableProduction]
+                                  ,[VariableIntercompanyLogistics]
+                                  ,[VariableClientLogistic]
+                                  ,[Contribution0]
+                                  ,[Contribution1]
+                                  ,[PlanVersion]
+                                  ,[DescriptionTT]
+                                  ,[DescriptionMT]
+                                  ,[DescriptionOT]
+                                  ,[AttrPrice]
+                                  ,[AttrCS]
+                                  ,[DM] = 'text'
+                                  ,[TM] = 'text'
+                                  ,[ClientService] = 'text'
+                                  ,[OPK] = 'text'
+                                  ,[isDeleted]
+                                  ,[isFromDB]
+                            FROM [FinanceAndSAP].[segment].[Agreements]
+                            WHERE TillDate = '2024-12-31 00:00:00.000' and SegmentCode = '{one_top_client}' """)
 
 for i in diff_sku:
     df_exl_filtred = df_exl[df_exl['Код_SKU'] == i].iloc[:1]
