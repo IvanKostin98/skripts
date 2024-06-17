@@ -4,8 +4,8 @@ Created on Fri Feb  9 11:51:00 2024
 
 @author: kostin ivan
 
-1. Дозаливка инфо из РКУ Маргариты в бд
-2. Дозаливка инфо из Номенклатуры в бд
+Дозаливка инфо
+Ручная версия
 """
 import pandas as pd
 import pyodbc
@@ -13,7 +13,7 @@ import datetime
 from tqdm import tqdm
 
 def logging(x):
-    log_file = r'\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Костин И.Н\Python скрипты\Логирование\Лог_файл_changer_rku.txt'
+    log_file = r'\\***\Для всех\***\Дистрибьюторы спец.прайс\***\Python скрипты\Логирование\Лог_файл_changer_rku.txt'
     with open(log_file , 'a') as file:
         file.writelines(x)
         
@@ -23,7 +23,7 @@ def file_to_df(path, sheet, skiprows, columns):
     return df
         
 #Переменные
-path_to_rku_excel = r'\\fs1v-msk01\Для всех\Третьякова М\Pricing\Рита\РКУ\РКУ 2024.xlsx'
+path_to_rku_excel = r'\\***\Для всех\***\Pricing\***\РКУ\РКУ 2024.xlsx'
 sp_columns = ['Код SKU', 'Код сегмента', 'Бренд', 'BI название ДТ', 'Дивизион', 'Название сегмента', 'Название SKU', 
               'Емкость', 'Срок с', 'Срок по', 'Цена', 'скидка за непринятие', 'скидка для торгового дома', 
               'Partnership discount MT текущий', 'Trade Marketing discount conditional(incl CLAP) текущий', 
@@ -36,7 +36,7 @@ counter = 0
 
 #Подключение к бд/загрузка файла
 conn = pyodbc.connect(driver='{SQL Server}',
-                      server="server219", 
+                      server="***", 
                       database="FinanceAndSAP",               
                       trusted_connection="yes")
 cur = conn.cursor()
