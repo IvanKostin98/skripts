@@ -15,7 +15,7 @@ first = logging_on_bd(username = 'Иван')
 
 first.ignore_warnings()
 
-bot=telebot.TeleBot('5997206328:AAGc1SFKcTc4p07mZ6ZserZmH93OrkxMplU')
+bot=telebot.TeleBot('5997206328:************cTc4p07m**********xMplU')
 
 @bot.message_handler(content_types=['text'])   
 def startBot(message):
