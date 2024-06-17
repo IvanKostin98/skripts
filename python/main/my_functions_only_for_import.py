@@ -22,7 +22,7 @@ class logging_on_bd:
         import pyodbc
 
         self.conn = pyodbc.connect(driver='{SQL Server}',
-                              server="server219", 
+                              server="***", 
                               database="Sandbox",               
                               trusted_connection="yes")
         self.cur = self.conn.cursor()
@@ -127,7 +127,7 @@ class usefull_function:
         import sys
 
         try:
-            with open(r'\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Костин И.Н\Python скрипты\Используем\ДТ\Бекап файлов на облако\Доступ к серверу.txt', 'r') as file:
+            with open(r'\\***\Для всех\***\Дистрибьюторы спец.прайс\***\Python скрипты\Используем\ДТ\Бекап файлов на облако\Доступ к серверу.txt', 'r') as file:
                 file.close()
             print("Есть доступ к серверу msk")
 
