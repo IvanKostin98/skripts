@@ -8,8 +8,8 @@ sp_in_table = ['Дивизион', 'код 1С', 'Клиент', 'L6', 'sku', 'c
 
 dict_rebate = dict(zip(sp_in_bd, sp_in_table))
 
-log_file = r'\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Костин И.Н\Python скрипты\Логирование\Лог_файл_для_РДН.txt'
-df_ku=pd.read_excel(r"\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\!Реестр дополнительных начислений ЧС.xlsm", sheet_name="КУ_самовывоз", skiprows=0)
+log_file = r'\\***\Для всех\Третьякова М\Дистрибьюторы спец.прайс\***\Python скрипты\Логирование\Лог_файл_для_РДН.txt'
+df_ku=pd.read_excel(r"\\***\Для всех\***\Дистрибьюторы спец.прайс\!Реестр дополнительных начислений ЧС.xlsm", sheet_name="КУ_самовывоз", skiprows=0)
 df_ku=pd.DataFrame(df_ku, columns=sp_in_table)
 df_ku.drop(labels = [0,1],axis = 0, inplace=True)
 
@@ -27,7 +27,7 @@ cr__df_ku = df_ku.shape[0]
 try:
     # подключение к БД
     conn = pyodbc.connect(driver='{SQL Server}',
-                          server="server219", 
+                          server="***", 
                           database="Sandbox",               
                           trusted_connection="yes")
     cur = conn.cursor()
