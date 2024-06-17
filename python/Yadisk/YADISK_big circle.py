@@ -19,7 +19,7 @@ first = logging_on_bd(username = 'Ivan')
  
 start_price = time.perf_counter()
 # Проверка доступа к серверу папки
-path_to_txt = r'\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Костин И.Н\Python скрипты\Используем\ДТ\Бекап файлов на облако\Доступ к серверу.txt'
+path_to_txt = r'\\***\Для всех\***\Дистрибьюторы спец.прайс\***\Python скрипты\Используем\ДТ\Бекап файлов на облако\Доступ к серверу.txt'
  
 check_serv = os.path.exists(path_to_txt)
  
@@ -78,9 +78,9 @@ print(papka_sop, 'S&OP')
 print(papka_sop_2, 'S&OP 2')
 print(papka_sop_3, 'S&OP 3')
  
-pyt_k_zakritiu = r'\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\закрытие\2024'
+pyt_k_zakritiu = r'\\***\Для всех\***\Дистрибьюторы спец.прайс\закрытие\2024'
 pyt_k_zakritiu_backup = r'C:\\Users\\kostin\\YandexDisk\\New_back_up\\Шаблоны'
-pyt_k_sop = r'\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\S&OP\2024'
+pyt_k_sop = r'\\***\Для всех\***\Дистрибьюторы спец.прайс\S&OP\2024'
 pyt_k_sop_backup = r'C:\\Users\\kostin\\YandexDisk\\New_back_up\\Шаблоны'
 
 try:
