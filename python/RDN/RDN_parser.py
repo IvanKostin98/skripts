@@ -36,7 +36,7 @@ def func():
         '''подключение к бд'''
         #Подключение к SQL (подключение только к одной датабазе)
         cnxn = pyodbc.connect(driver='{SQL Server}',
-                              server='server219', 
+                              server='***', 
                               database=db,               
                               trusted_connection='yes')
         #Запрос можно писать в SQL Server и через слеши вставлять
@@ -85,7 +85,7 @@ def func():
     for i in unique_division:
         loc_df_division = df_rb.loc[df_rb['Дивизион'] == i]
         unique_distr = loc_df_division['Клиент'].unique()
-        writer = pd.ExcelWriter(rf"\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Реестр ДН нарезка по дивизионам\Компенсации дистрибьюторов персональные {i.title()}.xlsx")
+        writer = pd.ExcelWriter(rf"\\***\Для всех\***\Дистрибьюторы спец.прайс\Реестр ДН нарезка по дивизионам\Компенсации дистрибьюторов персональные {i.title()}.xlsx")
         for j in unique_distr:
             print(j)
             loc_df_distr = loc_df_division.loc[loc_df_division['Клиент'] == j]
@@ -93,7 +93,7 @@ def func():
         writer.close()
     
     for i in unique_division:
-        filename = rf"\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Реестр ДН нарезка по дивизионам\Компенсации дистрибьюторов персональные {i.title()}.xlsx"
+        filename = rf"\\***\Для всех\***\Дистрибьюторы спец.прайс\Реестр ДН нарезка по дивизионам\Компенсации дистрибьюторов персональные {i.title()}.xlsx"
         df = load_workbook(filename)
         sheets_name = df.sheetnames
         for j in sheets_name:
@@ -128,7 +128,7 @@ def func():
             ws['G10'].font = Font(name='Arial Cyr', charset=204, family=2.0, b=True, color='FF0000', sz=12.0)
             
             #блок для лого
-            logo_asg = openpyxl.drawing.image.Image(r"\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Костин И.Н\Python скрипты\Используем\Ценообразование\Доп файлы для работы скриптов\Confidential.jpg")
+            logo_asg = openpyxl.drawing.image.Image(r"\\***\Для всех\***\Дистрибьюторы спец.прайс\***\Python скрипты\Используем\Ценообразование\Доп файлы для работы скриптов\Confidential.jpg")
             ws.add_image(logo_asg, "F1")
     
         df.save(filename)
