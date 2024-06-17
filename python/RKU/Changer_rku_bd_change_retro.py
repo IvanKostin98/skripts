@@ -12,7 +12,7 @@ import pyodbc
 
 
 def logging(x):
-    log_file = r'\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Костин И.Н\Python скрипты\Логирование\Лог_файл_changer_rku.txt'
+    log_file = r'\\***\Для всех\***\Дистрибьюторы спец.прайс\***\Python скрипты\Логирование\Лог_файл_changer_rku.txt'
     with open(log_file , 'a') as file:
         file.writelines(x)
         
@@ -27,7 +27,7 @@ counter = 0
 
 #Подключение к бд/загрузка файла
 conn = pyodbc.connect(driver='{SQL Server}',
-                      server="server219", 
+                      server="***", 
                       database="FinanceAndSAP",               
                       trusted_connection="yes")
 cur = conn.cursor()
