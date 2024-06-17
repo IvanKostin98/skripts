@@ -14,8 +14,8 @@ first = logging_on_bd(username = 'Иван')
 first.ignore_warnings()
 all_log_table = first.bd_select_loggs_result(priznak = False)[:15]
 
-TOKEN = '5997206328:AAGc1SFKcTc4p07mZ6ZserZmH93OrkxMplU'
-bot=telebot.TeleBot('5997206328:AAGc1SFKcTc4p07mZ6ZserZmH93OrkxMplU')
+TOKEN = '599*****************4p07mZ6***********plU'
+bot=telebot.TeleBot('5*****28:AAG*****************OrkxMp***')
 chat_id = '945394408'
 message_text = '\n'.join(all_log_table)
  
