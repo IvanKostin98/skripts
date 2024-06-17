@@ -17,8 +17,8 @@ first = logging_on_bd(username = 'Ivan')
 
 #блок кода для проверки доступа к серверу папки
 
-path_to_txt=r'\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Костин И.Н\Python скрипты\Используем\ДТ\Бекап файлов на облако\Доступ к серверу.txt'
-log_file = r'\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Костин И.Н\Python скрипты\Логирование\Лог_файл_для_Бекапа.txt'
+path_to_txt=r'\\***\Для всех\***\Дистрибьюторы спец.прайс\Костин И.Н\Python скрипты\Используем\ДТ\Бекап файлов на облако\Доступ к серверу.txt'
+log_file = r'\\***\Для всех\***\Дистрибьюторы спец.прайс\Костин И.Н\Python скрипты\Логирование\Лог_файл_для_Бекапа.txt'
 now = datetime.datetime.now()
 
 try:
@@ -70,21 +70,21 @@ def work_cycle(otkuda, kuda, name_papka_1):
         handleAssetsFile(otkuda+'/'+name_papka_1, kuda, name_papka_1)
 
         
-sp_contracts = [[r'\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Северо-Запад\2024', r'C:\Users\kostin\YandexDisk\New_back_up\Контракты\Северо-Запад\2024'],
-      [r'\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Дальний Восток\2024', r'C:\Users\kostin\YandexDisk\New_back_up\Контракты\Дальний Восток\2024'],
-      [r'\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Москва\2024', r'C:\Users\kostin\YandexDisk\New_back_up\Контракты\Москва\2024'],
-      [r'\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Омск\2024', r'C:\Users\kostin\YandexDisk\New_back_up\Контракты\Омск\2024'],
-      [r'\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Сибирь\2024', r'C:\Users\kostin\YandexDisk\New_back_up\Контракты\Сибирь\2024'],
-      [r'\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\СПБ\2024', r'C:\Users\kostin\YandexDisk\New_back_up\Контракты\СПБ\2024'],
-      [r'\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Урал\2024', r'C:\Users\kostin\YandexDisk\New_back_up\Контракты\Урал\2024'],
-      [r'\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Центр\2024', r'C:\Users\kostin\YandexDisk\New_back_up\Контракты\Центр\2024'],
-      [r'\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Юг\2024', r'C:\Users\kostin\YandexDisk\New_back_up\Контракты\ЮГ\2024'],
-      [r'\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Приморье\2024', r'C:\Users\kostin\YandexDisk\New_back_up\Контракты\Приморье\2024'],
-      [r'\\fs1v-msk01\Для всех\Третьякова М\Pricing\цены\протоколы\2024\Протокол РФ', r'C:\Users\kostin\YandexDisk\New_back_up\Протоколы\2024'],
-      [r'\\fs1v-msk01\Для всех\Третьякова М\Pricing\цены\цс\2024', r'C:\Users\kostin\YandexDisk\New_back_up\ЦС\2024']]
+sp_contracts = [[r'\\***\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Северо-Запад\2024', r'C:\Users\kostin\YandexDisk\New_back_up\Контракты\Северо-Запад\2024'],
+      [r'\\***\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Дальний Восток\2024', r'C:\Users\kostin\YandexDisk\New_back_up\Контракты\Дальний Восток\2024'],
+      [r'\\***\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Москва\2024', r'C:\Users\kostin\YandexDisk\New_back_up\Контракты\Москва\2024'],
+      [r'\\***\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Омск\2024', r'C:\Users\kostin\YandexDisk\New_back_up\Контракты\Омск\2024'],
+      [r'\\***\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Сибирь\2024', r'C:\Users\kostin\YandexDisk\New_back_up\Контракты\Сибирь\2024'],
+      [r'\\***\Для всех\Третьякова М\Дистрибьюторы спец.прайс\СПБ\2024', r'C:\Users\kostin\YandexDisk\New_back_up\Контракты\СПБ\2024'],
+      [r'\\***\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Урал\2024', r'C:\Users\kostin\YandexDisk\New_back_up\Контракты\Урал\2024'],
+      [r'\\***\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Центр\2024', r'C:\Users\kostin\YandexDisk\New_back_up\Контракты\Центр\2024'],
+      [r'\\***\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Юг\2024', r'C:\Users\kostin\YandexDisk\New_back_up\Контракты\ЮГ\2024'],
+      [r'\\***\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Приморье\2024', r'C:\Users\kostin\YandexDisk\New_back_up\Контракты\Приморье\2024'],
+      [r'\\***\Для всех\Третьякова М\Pricing\цены\протоколы\2024\Протокол РФ', r'C:\Users\kostin\YandexDisk\New_back_up\Протоколы\2024'],
+      [r'\\***\Для всех\Третьякова М\Pricing\цены\цс\2024', r'C:\Users\kostin\YandexDisk\New_back_up\ЦС\2024']]
 
-sp_file = [[r'\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\!Реестр дополнительных начислений ЧС.xlsm', r'C:\Users\kostin\YandexDisk\New_back_up\Реестр ДН\!Реестр дополнительных начислений ЧС.xlsm'],
-           [r'\\fs1v-msk01\Для всех\Третьякова М\Pricing\Рита\РКУ\РКУ 2024.xlsx', r'C:\Users\kostin\YandexDisk\New_back_up\Реестр КУ\РКУ 2024.xlsx']]
+sp_file = [[r'\\***\Для всех\Третьякова М\Дистрибьюторы спец.прайс\!Реестр дополнительных начислений ЧС.xlsm', r'C:\Users\kostin\YandexDisk\New_back_up\Реестр ДН\!Реестр дополнительных начислений ЧС.xlsm'],
+           [r'\\***\Для всех\Третьякова М\Pricing\Рита\РКУ\РКУ 2024.xlsx', r'C:\Users\kostin\YandexDisk\New_back_up\Реестр КУ\РКУ 2024.xlsx']]
 
 spisok_kakaya_papka_dlya_skrripts = ['Python скрипты','SQL скрипты','VBA скрипты']
 counter=0
@@ -102,20 +102,20 @@ for i in range(len(sp_file)):
     except:
         counter+=1
 try:
-    DT_reports(r'\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Отчёт по ДТ\2024', r'C:\Users\kostin\YandexDisk\New_back_up\Отчеты ДТ\2024', 'P&L*')   
+    DT_reports(r'\\***\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Отчёт по ДТ\2024', r'C:\Users\kostin\YandexDisk\New_back_up\Отчеты ДТ\2024', 'P&L*')   
     print('отчёт дт ОК')
 except:
     counter+=1
 
 try:
     for i in range(len(spisok_kakaya_papka_dlya_skrripts)):
-        work_cycle(r'\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Костин И.Н', r'C:\Users\kostin\YandexDisk\New_back_up\Codes', spisok_kakaya_papka_dlya_skrripts[i])
+        work_cycle(r'\\***\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Костин И.Н', r'C:\Users\kostin\YandexDisk\New_back_up\Codes', spisok_kakaya_papka_dlya_skrripts[i])
 except:
     counter+=1
 
 #калькуляторы с сервера
 try:
-    contracts(r'\\fs1v-msk01\Для всех\Calc\LKA', r'C:\Users\kostin\YandexDisk\New_back_up\Калькуляторы', '*Калькулятор*')
+    contracts(r'\\***\Для всех\Calc\LKA', r'C:\Users\kostin\YandexDisk\New_back_up\Калькуляторы', '*Калькулятор*')
 except:
     counter+=1
 
