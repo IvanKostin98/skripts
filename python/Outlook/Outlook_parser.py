@@ -34,7 +34,7 @@ def extract_emails_by_subject(folder_name, subject):
     for message in messages:
         if subject in str(message):
             try:
-                message.SaveAs(os.path.join(r'\\fs1v-msk01\Для всех\Третьякова М\Дистрибьюторы спец.прайс\Костин И.Н\Согласования 2024', f"{replace_custom(message.Subject)}.msg"))
+                message.SaveAs(os.path.join(r'\\****\Для всех\***\Дистрибьюторы спец.прайс\**\Согласования 2024', f"{replace_custom(message.Subject)}.msg"))
             except:
                 print(message)
             
